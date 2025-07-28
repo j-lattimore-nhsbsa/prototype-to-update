@@ -1,0 +1,30 @@
+// Panel - confirmation
+.nhsuk-panel {
+  margin-top: 0;
+
+  display: block;
+  overflow: hidden;
+  background-color: #005eb8;
+
+  @include mq($from: desktop) {
+    padding: nhsuk-spacing(4);
+  }
+}
+
+.nhsuk-panel__caption {
+  color: white;
+}
+
+.nhsuk-panel__title {
+  color: white;
+  @include nhsuk-responsive-margin(4, "bottom");
+}
+
+.nhsuk-panel__body {
+  @include nhsuk-font(24);
+  color: white;
+
+  strong {
+    @include nhsuk-font(36, bold);
+  }
+}

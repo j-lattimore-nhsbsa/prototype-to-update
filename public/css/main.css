@@ -7892,13 +7892,52 @@ b {
   vertical-align: middle;
 }
 
-.done-panel {
-  background-color: #005EB8;
-  color: white;
-  padding: 20px;
-  margin: 0px 0px 30px 0px;
+.nhsuk-panel {
+  margin-top: 0;
+  display: block;
+  overflow: hidden;
+  background-color: #005eb8;
+}
+@media (min-width: 48.0625em) {
+  .nhsuk-panel {
+    padding: 24px;
+  }
 }
 
-.done-panel * {
+.nhsuk-panel__caption {
   color: white;
+}
+
+.nhsuk-panel__title {
+  color: white;
+  margin-bottom: 16px;
+}
+@media (min-width: 40.0625em) {
+  .nhsuk-panel__title {
+    margin-bottom: 24px;
+  }
+}
+
+.nhsuk-panel__body {
+  font-weight: 400;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: white;
+}
+@media (min-width: 40.0625em) {
+  .nhsuk-panel__body {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 1.33333;
+  }
+}
+@media print {
+  .nhsuk-panel__body {
+    font-size: 18pt;
+    line-height: 1.15;
+  }
+}
+.nhsuk-panel__body strong {
+  /*@include nhsuk-font(36, bold);*/
 }

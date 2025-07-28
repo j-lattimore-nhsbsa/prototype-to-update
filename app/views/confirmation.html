@@ -3,24 +3,24 @@
 <!-- Set the page title -->
 {% block pageTitle %}Process complete - {{ serviceName }}{% endblock %}
 
-<!-- For adding a back link -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block outerContent %}
-
-{% endblock %}
-
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <div class="done-panel">
-      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-3">
-        Process complete
-      </h1>
-      <p class="nhsuk-u-margin-0">We will send an email to <strong>james@dummy-nhs-email.com</strong></p>
-    </div>
+     <div class="nhsuk-panel nhsuk-u-margin-bottom-6">
+
+                <span class="nhsuk-panel__caption">Based on what
+                    you've told us</span>
+    
+                <h1 class="nhsuk-panel__title">
+                    You get help with prototype upgrades
+                </h1>
+                <div class="nhsuk-panel__body">
+                    Your reference number is <strong>HDJ2123F</strong>
+                </div>
+            </div>
       
       {{ actionLink({
       text: 'Back to start page',

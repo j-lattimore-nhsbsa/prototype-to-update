@@ -4,18 +4,8 @@
 // Components that are not in the NHS.UK frontend library
 @import 'components/related-nav';
 @import 'components/phase-banner';
+@import 'components/panel-confirmation';
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
-
-.done-panel {
-    background-color: #005EB8;
-    color: white;
-    padding: 20px;
-    margin: 0px 0px 30px 0px;
-}
-
-.done-panel * {
-    color: white;
-}
