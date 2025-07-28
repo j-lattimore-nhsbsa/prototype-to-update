@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+<!-- Set the page title -->
+{% block pageTitle %}Look at this table - {{ serviceName }}{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+     <h1 class="nhsuk-heading-l">Look at this table</h1>
+
+     <p class="nhsuk-body">This is a table generated from data loaded in from a spreadsheet.</p>
+        
+    {% if data.debug === 'true' %}
+      <textarea>{{ data | dump }}</textarea>
+    {% endif %}
+
+    {{ table({
+      panel: false,
+      caption: 'People',
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: 'Name'
+        },
+        {
+          text: 'Favourite fruit'
+        },
+        {
+          text: 'Pet'
+        }
+      ],
+      rows: data.people | getTableRows
+    }) }}
+
+    {{ button({
+      text: 'Continue',
+      href: 'confirmation'
+    }) }}
+      
+
+    </div>
+  </div>
+{% endblock %}

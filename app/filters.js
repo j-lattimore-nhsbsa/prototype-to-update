@@ -7,6 +7,26 @@ module.exports = function (env) {
    */
   var filters = {}
 
+  filters.getTableRows = function( people ){
+
+    const rows = [];
+
+    if( Array.isArray(people) && people.length > 0 ){
+
+      people.forEach(function( person ){
+        rows.push([
+          { text: person.firstName || 'John' },
+          { text: person.favouriteFruit || 'Grapes' },
+          { text: person.pet || 'Tortoise' }
+        ]);
+      });
+
+    }
+
+    return rows;
+
+  }
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:

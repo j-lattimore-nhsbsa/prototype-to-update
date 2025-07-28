@@ -34,7 +34,8 @@
     "nhsuk-frontend": "^5.1.0",
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
-    "sass": "^1.34.0"
+    "sass": "^1.34.0",
+    "convert-excel-to-json": "^1.7.0"
   },
   "devDependencies": {}
 }

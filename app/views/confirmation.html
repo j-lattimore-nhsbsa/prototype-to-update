@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+<!-- Set the page title -->
+{% block pageTitle %}Process complete - {{ serviceName }}{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="done-panel">
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-3">
+        Process complete
+      </h1>
+      <p class="nhsuk-u-margin-0">We will send an email to <strong>james@dummy-nhs-email.com</strong></p>
+    </div>
+      
+      {{ actionLink({
+      text: 'Back to start page',
+      href: '/'
+    }) }}
+
+    </div>
+  </div>
+{% endblock %}
