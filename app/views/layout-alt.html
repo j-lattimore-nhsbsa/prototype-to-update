@@ -1,0 +1,72 @@
+<!-- 
+  This is the main layout where you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Extends the layout from /docs/views/template.html -->
+{% extends "template-alt.html" %}
+
+<!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+{% endblock %}
+
+<!-- Set the page title -->
+{% block pageTitle %}{{ serviceName }}{% endblock %}
+
+<!-- Edit the header -->
+<!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+  {{ header({
+    "service": {
+        "name": serviceName,
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+  <div class="nhsuk-width-container no-print">
+
+          <!-- PHASE BANNER -->
+          <div class="nhsuk-phase-banner">
+            <p class="nhsuk-phase-banner__content">
+              <strong class="nhsuk-tag nhsuk-phase-banner__content__tag">
+                BETA
+              </strong>
+              <span class="nhsuk-phase-banner__text">
+                This is a new service – your <a class="nhsuk-link" href="https://online1.snapsurveys.com/interview/6a165693-7cb5-4397-a2cf-f21fb14613a0">feedback</a> will help us to improve it.
+              </span>
+            </p>
+          </div>
+
+        </div>
+
+{% endblock %}
+
+<!-- Edit the footer -->
+<!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
+{% block footer %}
+  {{ footer({
+    "links": [
+      {
+        "URL": "/",
+        "label": "Home"
+      },
+      {
+        "URL": "/page-example",
+        "label": "Example page"
+      }
+    ]
+  })}}
+{% endblock %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    <!-- Custom JavaScript files can be added to this file -->
+    {% include "includes/scripts.html" %}
+    <!-- For adding page specific JavsScript -->
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+{% endblock %}
