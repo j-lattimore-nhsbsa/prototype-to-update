@@ -26,7 +26,21 @@ module.exports = function (env) {
 
     return rows;
 
-  }
+  };
+
+  filters.alterTodaysDate = function( plus ){
+
+    const { DateTime } = require('luxon');
+
+    let returnDate = DateTime.now().setZone('Europe/London').toFormat('d LLLL yyyy');
+
+    if( Object.prototype.toString.call( plus ) === '[object Object]' ){
+      returnDate = DateTime.now().setZone('Europe/London').plus( plus ).toFormat('d LLLL yyyy');
+    } 
+
+    return returnDate;
+
+  };
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:

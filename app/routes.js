@@ -2,6 +2,11 @@
 const express = require('express');
 const router = express.Router();
 
-// Add your routes here - above the module.exports line
+
+router.post(/select-a-date/, function (req, res) {
+    const destination = 'confirmation';
+    res.redirect( destination );
+});
+
 
 module.exports = router;
