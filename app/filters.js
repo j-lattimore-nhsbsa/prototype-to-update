@@ -7,17 +7,18 @@ module.exports = function (env) {
    */
   var filters = {}
 
-  filters.getTableRows = function( people ){
+  filters.getTableRows = function( releases ){
 
     const rows = [];
 
-    if( Array.isArray(people) && people.length > 0 ){
+    if( Array.isArray(releases) && releases.length > 0 ){
 
-      people.forEach(function( person ){
+      releases.forEach(function( release ){
         rows.push([
-          { text: person.firstName || 'John' },
-          { text: person.favouriteFruit || 'Grapes' },
-          { text: person.pet || 'Tortoise' }
+          { text: release.release },
+          { text: release.version },
+          { html: '<span class="nhsuk-body-s">'+release.date+'</span>' },
+          { html: '<span class="nhsuk-body-s">'+release.notes+'</span>' },
         ]);
       });
 

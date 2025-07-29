@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 <!-- Set the page title -->
-{% block pageTitle %}Look at this table - {{ serviceName }}{% endblock %}
+{% block pageTitle %}NHS prototype kit releases with node versions - {{ serviceName }}{% endblock %}
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
@@ -16,9 +16,9 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
 
-     <h1 class="nhsuk-heading-l">Look at this table</h1>
+     <h1 class="nhsuk-heading-l">NHS prototype kit releases with node versions</h1>
 
      <p class="nhsuk-body">This is a table generated from data loaded in from a spreadsheet.</p>
         
@@ -28,20 +28,23 @@
 
     {{ table({
       panel: false,
-      caption: 'People',
+      caption: 'Releases',
       firstCellIsHeader: false,
       head: [
         {
-          text: 'Name'
+          text: 'Release'
         },
         {
-          text: 'Favourite fruit'
+          text: 'Version'
         },
         {
-          text: 'Pet'
+          text: 'Date'
+        },
+         {
+          text: 'Notes'
         }
       ],
-      rows: data.people | getTableRows
+      rows: data.versions | getTableRows
     }) }}
 
     {{ button({

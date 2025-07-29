@@ -1,11 +1,11 @@
-function _loadPeople(){
+function _loadVersions(){
 
   // Import the converter library
   const excelToJSON = require('convert-excel-to-json');
 
   // Load in the data
   let json = excelToJSON({
-    sourceFile: 'app/data/dummy_data.xlsx'
+    sourceFile: 'app/data/prototype-kit-versions.xlsx'
   });
 
   // If we have the data, format it, otherwise, set an error message
@@ -24,7 +24,7 @@ function _loadPeople(){
 function _formatJSON( json ){
 
   // Create a holder array for the people
-  const people = [];
+  const releases = [];
 
   // Check if the JSON exists, that Sheet1 is there, and that Sheet1 is an array
   if( json && json.Sheet1 && Array.isArray( json.Sheet1 ) ){
@@ -36,14 +36,15 @@ function _formatJSON( json ){
       if( i > 0 ){
         
         // Map out our data into a more easily understandable format
-        const person = {};
+        const release = {};
 
-        person.firstName = row.A;
-        person.favouriteFruit = row.B;
-        person.pet = row.C;
+        release.release = row.A;
+        release.date = row.B;
+        release.version = row.C;
+        release.notes = row.D;
 
-        // Add this person to our holder array
-        people.push( person );
+        // Add this release to our holder array
+        releases.push( release );
 
       }
 
@@ -52,7 +53,7 @@ function _formatJSON( json ){
 
   }
 
-  return people;
+  return releases;
 
 };
 
@@ -62,6 +63,6 @@ module.exports = {
     debug: 'false',
     loggedIn: 'false',
 
-    people: _loadPeople()
+    versions: _loadVersions()
 
 }
